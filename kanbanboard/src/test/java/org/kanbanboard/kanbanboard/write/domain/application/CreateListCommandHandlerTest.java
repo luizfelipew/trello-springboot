@@ -8,10 +8,10 @@ import java.util.UUID;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class CreateListCommandHandlerTest {
+class CreateListCommandHandlerTest {
 
     @Test
-    void dummy() {
+    void GIVEN_ValidCommand_MUST_DelegateToListAggregate() {
 
         // given
         UUID id = UUID.randomUUID();
@@ -26,7 +26,6 @@ public class CreateListCommandHandlerTest {
 
         // then
         verify(listAggregate).create(id, position, name);
-
 
     }
 

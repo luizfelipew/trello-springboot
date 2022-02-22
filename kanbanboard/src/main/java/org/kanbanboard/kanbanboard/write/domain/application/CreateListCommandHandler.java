@@ -11,7 +11,9 @@ public class CreateListCommandHandler {
     }
 
     public void handle(CreateListCommand command) {
-        listAggregate.create(command.getId(), command.getPosition(), command.getName());
+        listAggregate.create(
+            command.getId(),
+            command.getPosition(),
+            command.getName());
     }
-
 }
