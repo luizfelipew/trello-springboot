@@ -10,7 +10,7 @@ public class CreateListCommandHandler {
         this.listAggregate = listAggregate;
     }
 
-    public void handle(final CreateListCommand command) {
+    public void handle(CreateListCommand command) {
         listAggregate.create(command.getId(), command.getPosition(), command.getName());
     }
 

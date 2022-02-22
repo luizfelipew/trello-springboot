@@ -7,5 +7,4 @@ public class ListAggregate {
     public void create(final UUID id, final int position, final String name) {
 
     }
-
 }
