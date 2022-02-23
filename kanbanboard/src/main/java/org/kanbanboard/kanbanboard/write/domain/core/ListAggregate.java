@@ -4,7 +4,13 @@ import java.util.UUID;
 
 public class ListAggregate {
 
-    public void create(final UUID id, final int position, final String name) {
+    private final ListRepository repository;
 
+    public ListAggregate(ListRepository repository) {
+        this.repository = repository;
+    }
+
+    public void create(final UUID id, final int position, final String name) {
+        repository.create(id, position, name);
     }
 }
