@@ -1,17 +1,17 @@
 package org.kanbanboard.kanbanboard.write.adapter.out;
 
-import org.kanbanboard.kanbanboard.write.domain.core.ListRepository;
+import org.kanbanboard.kanbanboard.write.domain.core.BucketRepository;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.sql.DataSource;
 import java.util.UUID;
 
-public class ListRepositoryImpl implements ListRepository {
+public class BucketRepositoryImpl implements BucketRepository {
 
     private NamedParameterJdbcTemplate jdbcTemplate;
 
-    public ListRepositoryImpl(DataSource dataSource) {
+    public BucketRepositoryImpl(DataSource dataSource) {
         jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
@@ -30,19 +30,5 @@ public class ListRepositoryImpl implements ListRepository {
 
         jdbcTemplate.update(sql, parameters);
 
-    }
-
-
-    public boolean hasList(UUID id) {
-
-        String sql = """
-          SELECT count(*)
-          FROM list
-          WHERE uuid = :uuid""";
-
-        MapSqlParameterSource parameters = new MapSqlParameterSource()
-            .addValue("uuid", id);
-
-        return jdbcTemplate.queryForObject(sql, parameters, Boolean.class);
     }
 }
