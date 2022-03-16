@@ -1,11 +1,11 @@
 package org.kanbanboard.kanbanboard.write.adapter.out;
 
+import org.kanbanboard.kanbanboard.write.domain.core.Bucket;
 import org.kanbanboard.kanbanboard.write.domain.core.BucketRepository;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.sql.DataSource;
-import java.util.UUID;
 
 public class BucketRepositoryImpl implements BucketRepository {
 
@@ -16,7 +16,7 @@ public class BucketRepositoryImpl implements BucketRepository {
     }
 
     @Override
-    public void create(UUID uuid, int position, String name) {
+    public void create(final Bucket bucket) {
 
         String sql = """
           INSERT INTO list(uuid, position, name) 
@@ -24,9 +24,9 @@ public class BucketRepositoryImpl implements BucketRepository {
 
         MapSqlParameterSource parameters = new MapSqlParameterSource();
 
-        parameters.addValue("uuid", uuid);
-        parameters.addValue("position", position);
-        parameters.addValue("name", name);
+        parameters.addValue("uuid", bucket.getUuid());
+        parameters.addValue("position", bucket.getPosition());
+        parameters.addValue("name", bucket.getName());
 
         jdbcTemplate.update(sql, parameters);
 
