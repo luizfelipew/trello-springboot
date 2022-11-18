@@ -1,7 +1,5 @@
 package org.kanbanboard.kanbanboard.write.domain.core;
 
-import org.assertj.core.api.Assert;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

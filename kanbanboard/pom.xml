@@ -17,6 +17,7 @@
 
     <properties>
         <java.version>17</java.version>
+        <maven.compiler.target>17</maven.compiler.target>
         <commons-dbcp2.version>2.8.0</commons-dbcp2.version>
     </properties>
 
@@ -66,41 +67,44 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.3.5.RELEASE</version>
-            </plugin>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>2.3.5.RELEASE</version>
+                </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugin</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <release>${java.version}</release>
-<!--                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>17</source>
-                    <target>17</target>
-<!--                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>17</source>
-                    <target>17</target>
-<!--                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
-                </configuration>
-            </plugin>
-        </plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <!--                <version>${maven-compiler-plugin.version}</version>-->
+                    <configuration>
+                        <release>${java.version}</release>
+                        <!--                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
+                    </configuration>
+                </plugin>
+                <!--            <plugin>-->
+                <!--                <groupId>org.apache.maven.plugins</groupId>-->
+                <!--                <artifactId>maven-compiler-plugins</artifactId>-->
+                <!--                <configuration>-->
+                <!--                    <source>17</source>-->
+                <!--                    <target>17</target>-->
+                <!--&lt;!&ndash;                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>&ndash;&gt;-->
+                <!--                </configuration>-->
+                <!--            </plugin>-->
+                <!--            <plugin>-->
+                <!--                <groupId>org.apache.maven.plugins</groupId>-->
+                <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+                <!--                <configuration>-->
+                <!--                    <source>17</source>-->
+                <!--                    <target>17</target>-->
+                <!--&lt;!&ndash;                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>&ndash;&gt;-->
+                <!--                </configuration>-->
+                <!--            </plugin>-->
+            </plugins>
+        </pluginManagement>
+
     </build>
 
 </project>
