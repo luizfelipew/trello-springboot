@@ -2,7 +2,9 @@ package org.kanbanboard.kanbanboard.write.domain.application;
 
 import org.kanbanboard.kanbanboard.write.domain.core.Bucket;
 import org.kanbanboard.kanbanboard.write.domain.core.BucketRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CreateBucketCommandHandler {
 
     private final BucketRepository repository;

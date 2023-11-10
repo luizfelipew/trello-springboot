@@ -1,8 +1,8 @@
-package examples.users;
+package examples.bucket;
 
 import com.intuit.karate.junit5.Karate;
 
-class UsersRunner {
+class BucketRunner {
     
     @Karate.Test
     Karate testUsers() {

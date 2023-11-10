@@ -4,9 +4,11 @@ import org.kanbanboard.kanbanboard.write.domain.core.Bucket;
 import org.kanbanboard.kanbanboard.write.domain.core.BucketRepository;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 
+@Repository
 public class BucketRepositoryImpl implements BucketRepository {
 
     private NamedParameterJdbcTemplate jdbcTemplate;
